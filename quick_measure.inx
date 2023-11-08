@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Quick Measure</name>
+    <id>pricklygorse.quickmeasure</id>
+      <param name="unit" type="optiongroup" appearance="combo" gui-text="Length Unit:">
+                <option translatable="no" value="in">in</option>
+                <option translatable="no" value="ft">ft</option>
+                <option translatable="no" value="yd">yd</option>
+                <option translatable="no" value="mm">mm</option>
+                <option translatable="no" value="cm">cm</option>
+                <option translatable="no" value="m">m</option>
+            </param>
+    <effect>
+        <object-type>path</object-type>
+        <effects-menu>
+            <submenu name="Prickly Gorse"/>
+        </effects-menu>
+    </effect>
+    <script>
+        <command location="inx" interpreter="python">quick_measure.py</command>
+    </script>
+</inkscape-extension>
