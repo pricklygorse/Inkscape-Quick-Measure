@@ -87,9 +87,9 @@ class MeasureLength(inkex.EffectExtension):
                  
                  cumulative.append(round(count * factor,prec))
         
-            self.msg("Total length: " + str(round(stotal * factor,2)))
-            self.msg("Segment Lengths: " + str(slengths_uu))
-            self.msg("Cumulative Lengths: " + str(cumulative))
+            self.msg("Total length: " + str(round(stotal * factor,2))+" "+self.options.unit)
+            self.msg("Segment Lengths: " + str(slengths_uu)+" "+self.options.unit)
+            self.msg("Cumulative Lengths: " + str(cumulative)+" "+self.options.unit)
             self.msg("")
 
            
