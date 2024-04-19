@@ -68,6 +68,8 @@ class MeasureLength(inkex.EffectExtension):
         if not filtered:
             raise inkex.AbortExtension(_("Please select at least one path object."))
         
+        pathlengths = []
+        
         for node in filtered:
             
             csp = node.path.transform(node.composed_transform()).to_superpath()
@@ -91,6 +93,11 @@ class MeasureLength(inkex.EffectExtension):
             self.msg("Segment Lengths: " + str(slengths_uu)+" "+self.options.unit)
             self.msg("Cumulative Lengths: " + str(cumulative)+" "+self.options.unit)
             self.msg("")
+            
+            pathlengths.append(stotal * factor)
+            
+        if len(pathlengths)==2:
+            self.msg("Difference: " + str(abs(round(pathlengths[0]-pathlengths[1],2)))+ " " + self.options.unit)
 
            
 if __name__ == "__main__":
